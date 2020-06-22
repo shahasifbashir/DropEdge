@@ -30,9 +30,9 @@ parser.add_argument('--no_cuda', action='store_true', default=False,
 parser.add_argument('--fastmode', action='store_true', default=False,
                     help='Disable validation during training.')
 parser.add_argument('--seed', type=int, default=42, help='Random seed.')
-parser.add_argument('--epochs', type=int, default=800,
+parser.add_argument('--epochs', type=int, default=810,
                     help='Number of epochs to train.')
-parser.add_argument('--lr', type=float, default=0.02,
+parser.add_argument('--lr', type=float, default=0.03,
                     help='Initial learning rate.')
 parser.add_argument('--lradjust', action='store_true',
                     default=False, help='Enable leraning rate adjust.(ReduceLROnPlateau or Linear Reduce)')
@@ -132,7 +132,7 @@ optimizer = optim.AdamW(model.parameters(),
                        lr=args.lr, weight_decay=args.weight_decay)
 
 # scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, patience=50, factor=0.618)
-scheduler = optim.lr_scheduler.MultiStepLR(optimizer, milestones=[200, 300, 400, 500, 600, 700], gamma=0.5)
+scheduler = optim.lr_scheduler.MultiStepLR(optimizer, milestones=[200, 300, 400, 500, 600, 700], gamma=0.6)
 # convert to cuda
 if args.cuda:
     model.cuda()
