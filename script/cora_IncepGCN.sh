@@ -10,11 +10,11 @@ python ./src/train_new.py \
     --nbaseblocklayer 6 \
     --hidden 128 \
     --epoch 400 \
-    --lr 0.01 \
-    --weight_decay 0.001 \
+    --lr 0.02 \
+    --weight_decay 0.011 \
     --early_stopping 400 \
-    --sampling_percent 0.05 \
-    --dropout 0.5 \
+    --sampling_percent 0.055 \
+    --dropout 0.6 \
     --normalization AugNormAdj \
      \
     
