@@ -128,7 +128,7 @@ model = GCNModel(nfeat=nfeat,
                  aggrmethod=args.aggrmethod,
                  mixmode=args.mixmode)
 
-optimizer = optim.Adam(model.parameters(),
+optimizer = optim.AdamW(model.parameters(),
                        lr=args.lr, weight_decay=args.weight_decay)
 
 # scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, patience=50, factor=0.618)
